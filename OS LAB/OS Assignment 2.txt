@@ -1,0 +1,143 @@
+Assignemnt 2 
+
+Q1 -
+Ans -
+	Command = echo $SHELL
+
+
+Q2 -
+Ans -
+	Command = echo `pwd`
+
+
+Q3 -	
+Ans- 
+		#!/bin/bash
+		echo -n "Enter the number up to which prime no want to print  "
+		read n
+
+  		for (( i=2; i<=n ;i++))
+  		do
+        	flag=0
+     		for ((j=2; j<i; j++))
+     		do
+
+        	if [ `expr $i % $j` -eq 0 ]
+        	then
+           	flag=1
+        	fi
+     		done
+
+          	if [ $flag -eq 0 ]
+          	then
+                echo -n " $i "
+         	fi
+  		done
+
+   		
+
+
+Q4 -
+Ans -
+
+		#!/bin/bash
+		echo -n  " Enter a number >>>>>>  "
+		read k
+		if [ $k  -eq 0 ]
+		then
+        	echo " $k is natural number "
+		else
+  		if [ `expr $k % 2` -eq 0 ]
+  		then
+          	echo " $k is even number"
+  		else
+          	echo " $k is odd number"
+  		 fi
+ 		fi
+
+
+Q5 -
+Ans -
+		
+		#!/bin/bash
+		echo "Enter a number: "
+		read Num
+		a=$(echo "obase=2;$Num" | bc)
+		echo $a
+
+
+
+
+Q6 -
+Ans -
+
+
+		#!/bin/bash
+		echo "Enter a two Numbers"
+		read a
+		read b
+		temp=$a
+		a=$b
+		b=$temp
+		echo "Swap Numbers :$a , $b"
+
+Q7 -
+Ans -
+
+		#!/bin/bash
+		echo "Enter a two Numbers"
+		read a
+		read b
+
+		a=$((a+b))
+		b=$((a-b))
+		a=$((a-b))
+		echo "Swap Numbers :$a , $b"
+
+Q8 -
+Ans -
+
+		#!/bin/bash
+		echo "enter an int"
+		read n
+		rev=0;
+		while [ $n != 0 ]
+		do
+        	re=$((n%10))
+       		rev=$((rev*10+re))
+        	n=$((n/10))
+
+		done
+        		echo "Rev No :$rev"
+Q9 -
+Ans -
+		#!/bin/bash
+		for table in {1..10..1}
+		do
+        	i=2
+        	mul=$((i*table))
+        	echo $i "x" $table "=" $mul
+		done
+
+
+
+
+
+Q10 -
+Ans -
+
+		#!/bin/bash
+		echo "Enter Year"
+		read Year
+		if [ `expr $Year % 400` = 0 ]
+		then
+
+       		echo "Leap Year"
+	
+		elif [ `expr $Year % 100` =  0 ]
+		then
+       		echo "Not a Leap Year"
+
+		elif [ `expr $Year % 4` = 0 ]
+		then
+        	echo "Leap Year"
